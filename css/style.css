@@ -1,0 +1,76 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica, sans-serif;
+    background-color: #edededf0;
+}
+
+.navbar {
+    position: fixed;
+    top: 0px;
+    background-color: #333;
+    z-index: 100;
+    width: 100%;
+}
+
+.navbar ul {
+    list-style: none;
+    background-color: #333;
+    text-align: center;
+    padding: 0;
+    margin: auto;
+}
+
+.navbar li {
+    display: inline-block;
+}
+
+.navbar a {
+    display: inline-block;
+    padding: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+section {
+    padding: 20px;
+    margin: 20px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Estilos para enlaces en general */
+a {
+    color: #264563; /* Un azul más suave */
+    transition: color 0.3s ease-in-out;
+    text-decoration: none; /* Elimina el subrayado predeterminado */
+}
+
+a:hover, a:focus {
+    color: #0056b3; /* Un azul más oscuro para el hover */
+    text-decoration: none; /* Elimina el subrayado al pasar el mouse */
+}
+
+/* Estilos específicos para los enlaces de la navbar */
+.navbar a {
+    display: inline-block;
+    padding: 20px;
+    color: white; /* Color de texto para los enlaces de la navbar */
+    text-decoration: none;
+    transition: background-color 0.3s ease; /* Suaviza el cambio de color de fondo */
+}
+
+.navbar a:hover, .navbar a:focus {
+    background-color: #555; /* Color de fondo más oscuro al pasar el mouse */
+    color: #ffffff; /* Mantiene el texto blanco */
+}
+
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
