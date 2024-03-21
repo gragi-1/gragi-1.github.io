@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mathematics and Computer Science Course</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Incluir Font Awesome para los íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
     <header>
@@ -12,10 +14,34 @@
     </header>
     <nav>
         <ul>
-            <li><a href="maths.html">Mathematics</a></li>
-            <li><a href="#computerscience">Computer Science</a></li>
+            <li>
+                <a href="#">Mathematics</a>
+                <div class="submenu">
+                    <ul>
+                        <li><a href="calculus.html">Calculus</a></li>
+                        <li><a href="geometry.html">Geometry</a></li>
+                        <li><a href="discrete-mathematics.html">Discrete Mathematics</a></li>
+                        <li><a href="mathematical-theory.html">Mathematical Theory</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <a href="#">Computer Science</a>
+                <div class="submenu">
+                    <ul>
+                        <li><a href="algorithms-data-structures.html">Algorithms and Data Structures</a></li>
+                        <li><a href="compilers.html">Compilers</a></li>
+                        <li><a href="ai-ml-dl.html">AI/ML/DL</a></li>
+                        <li><a href="networks-communications.html">Networks and Communications</a></li>
+                        <li><a href="graphic-programming.html">Graphic Programming</a></li>
+                        <li><a href="systems-programming.html">Systems Programming</a></li>
+                        <li><a href="low-level.html">Low Level</a></li>
+                    </ul>
+                </div>
+            </li>
         </ul>
     </nav>
+
     <main>
         <section id="mathematics">
             <h2>Mathematics</h2>
@@ -26,8 +52,16 @@
             <p>Computer Science is at the heart of the digital revolution, shaping the way we live, communicate, and solve problems. Our course delves into the intricate world of computer science and its application across various domains, from software engineering to artificial intelligence and cybersecurity. Students will embark on a journey through programming languages, understanding the structure and logic that drive software development. The curriculum covers essential areas such as algorithms, data structures, databases, and network systems, alongside emerging fields like machine learning and blockchain technology. With a strong emphasis on practical skills and real-world applications, our course aims to prepare participants for the challenges of the tech industry, fostering innovation and creativity. Whether you're aiming to become a software developer, data scientist, or IT specialist, our comprehensive program offers the knowledge and tools needed to succeed in the ever-evolving landscape of computer science.</p>
         </section>
     </main>
+    
+    <!-- Redes Sociales -->
+    <div class="social-media">
+        <a href="https://github.com/gragi-1" target="_blank" class="social-link"><i class="fab fa-github"></i> GitHub</a>
+        <a href="https://www.linkedin.com/in/alejandro-gragera-serradilla" target="_blank" class="social-link"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+    </div>
+
     <footer>
-        <p>© 2024 Mathematics and Computer Science Course</p>
+        <p>© 2024 Mathematics and Computer Science Course. Last updated: <span id="lastUpdated"></span></p>
     </footer>
+<script src="scripts.js"></script>
 </body>
 </html>
