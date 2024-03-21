@@ -46,7 +46,7 @@ a {
 }
 
 a:hover, a:focus {
-	color: #0056b3; /* Un azul más oscuro para el hover */
+	color: #0060c6; /* Un azul más oscuro para el hover */
 	text-decoration: none; /* Elimina el subrayado al pasar el mouse */
 }
 
