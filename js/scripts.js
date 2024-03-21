@@ -6,16 +6,44 @@ window.onload = function() {
     }, 500);
 }
 
-document.querySelectorAll('nav ul li').forEach(item => {
-    item.addEventListener('mouseover', () => {
-        const submenu = item.querySelector('.submenu');
-        submenu.classList.add('active');
+document.addEventListener('DOMContentLoaded', function() {
+    // Manejo del clic para el despliegue de submenús
+    document.querySelectorAll('nav > ul > li > a').forEach(item => {
+        item.addEventListener('click', function(e) {
+            e.preventDefault(); // Prevenir la navegación
+            const parentLi = this.parentNode;
+            const submenu = parentLi.querySelector('.submenu');
+            const isOpen = parentLi.classList.contains('open');
+
+            // Cierra todos los submenús abiertos excepto el actual
+            document.querySelectorAll('nav > ul > li').forEach(li => {
+                if (li !== parentLi) {
+                    li.classList.remove('open');
+                    li.querySelector('.submenu').style.display = 'none';
+                }
+            });
+
+            // Alterna el estado del submenú actual
+            if (!isOpen) {
+                parentLi.classList.add('open');
+                submenu.style.display = 'block';
+            } else {
+                parentLi.classList.remove('open');
+                submenu.style.display = 'none';
+            }
+        });
     });
 
-    item.addEventListener('mouseout', () => {
-        const submenu = item.querySelector('.submenu');
-        submenu.classList.remove('active');
+    // Escucha los clics en todo el documento para cerrar el submenú si se hace clic fuera
+    document.addEventListener('click', function(e) {
+        const isClickInsideMenu = document.querySelector('nav').contains(e.target);
+
+        if (!isClickInsideMenu) {
+            document.querySelectorAll('nav > ul > li').forEach(li => {
+                li.classList.remove('open');
+                li.querySelector('.submenu').style.display = 'none';
+            });
+        }
     });
 });
-
 
