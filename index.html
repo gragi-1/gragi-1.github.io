@@ -12,12 +12,12 @@
         <div class="container">
             <h1 class="logo">Alejandro Gragera Serradilla</h1>
             <ul class="menu" id="menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li class="no-decorate"><a href="#home">Home</a></li>
+                <li class="no-decorate"><a href="#projects">Projects</a></li>
+                <li class="no-decorate"><a href="#experience">Experience</a></li>
+                <li class="no-decorate"><a href="#skills">Skills</a></li>
+                <li class="no-decorate"><a href="#education">Education</a></li>
+                <li class="no-decorate"><a href="contact.html">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -26,7 +26,7 @@
     <section id="home">
         <div class="container">
             <h2>Welcome to My Portfolio</h2>
-            <p>I am a Computer and Mathematical Engineer from the Polytechnic University of Madrid (UPM). Passionate about programming and problem-solving, proficient in git, Java, C, C++, MySQL, Canvas, Markdown, Python, HTML, CSS3, and Javascript. This portfolio showcases my work and skills as a developer.</p>
+            <p>I am a Computer scientist and Mathematical Engineer from the Polytechnic University of Madrid (UPM). Passionate about programming and problem-solving, proficient in Git, Java, C, C++, MySQL, Canvas, Markdown, Python, HTML, CSS3 and Javascript. This portfolio showcases my work and skills as a developer.</p>
         </div>
     </section>
 
@@ -35,6 +35,72 @@
         <div class="container">
             <h2>Projects</h2>
             <!-- Add your projects here -->
+			<p>These are some of the projects that I have carried out or am currently carrying out, not all of them but a good enough (although short) amount of projects and they are a good example of my work, my skills and my way of working.</p>
+			<ul>
+				<h3>42 Madrid</h3>
+				<ul>
+					<p>42 Madrid is a coding school that offers a peer-to-peer learning environment. It is a project-based learning experience where students learn by working on projects. Here are some of the projects I have worked on:</p>
+					<li><b>Libft:</b> This project consists of creating a library of useful functions that we will use in future projects.</li>
+					<li><b>Get Next Line</b>: This project consists of creating a function that reads a file line by line.</li>
+					<li><b>ft_printf:</b> This project consists of recreating the printf function from the C standard library.</li>
+					<li><b>Push Swap:</b> This project consists of sorting a stack of numbers using two stacks and a limited set of operations.</li>
+					<li><b>Philosophers:</b> This project consists of solving the dining philosophers problem using threads and mutexes.</li>
+					<li><b>Minishell:</b> This project consists of creating a simple shell that can execute commands and manage environment variables.</li>
+					<li><b>ft_services:</b> This project consists of creating a Kubernetes cluster that runs a set of services, including a web server, a database, and a WordPress instance.</li>
+					<li><b>And much more...</b></li>
+				</ul>
+				<h3>3D Renderer in C</h3>
+				<ul>
+					<li>I created a real-time 3D renderer using the Windows API to record keyboard events and be able to interact with the rendered cube using keys. Here are some screenshots of what the different stages of rendering that my program allows you to visualize</li>
+				</ul>
+				<div class="image-collection">
+					<img src="assets/CompleteRender.png" alt="Image 1">
+					<img src="assets/CubeNoTexture.png" alt="Image 2">
+					<img src="assets/TriangulatedCube.png" alt="Image 3">
+				</div>
+				<h3>Kernel Driver</h3>
+				<ul>
+					<li>I made a kernel driver. The driver is a csgo2 cheat capable of being undetected by the game's own anti-cheat system, basically a bunnyhop hack. You can find this project on my github profile. I used VMware and WinDbg to emulate a Windows 11 machine capable of testing my code so I can debug. <b>This project was done for educational purposes only!</b></li>
+				</ul>
+				<h3>Machine Learning in C from scratch</h3>
+				<ul>
+					<li>I built a Machine Learning project in C that consists of 3 different programs each one different using the main algorithms and methods of Machine Learning, to carry this out we created from scratch everything we only use the standard C libraries to support us but all the logic and implementation are created from scratch, here you have a table with the 3 algorithms used that correctly summarizes the project:</li>
+					<table>
+						<thead>
+							<tr>
+								<th></th>
+								<th>K Means</th>
+								<th>KNN</th>
+								<th>Q-Learning</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="no-justify">Description</td>
+								<td>K-means is a clustering method, which aims to partition a set of n observations into k groups in which each observation belongs to the group whose mean value is closest. It is a method used in data mining.</td>
+								<td>Is a non-parametric, supervised learning classifier, which uses proximity to make classifications or predictions about the grouping of an individual data point.</td>
+								<td>This project is an implementation of the classic game of Tic Tac Toe, with a twist - it uses Machine Learning (ML) to create an AI opponent that learns how to play the game over time.</td>
+							</tr>
+							<tr>
+								<td class="no-justify">Type of ML</td>
+								<td>Unsupervised Learning (UL)</td>
+								<td>Supervised Learning (SL)</td>
+								<td>Reinforcement Learning (RL)</td>
+							</tr>
+							<tr>
+								<td class="no-justify">Data Set used</td>
+								<td><b>Iris Data Set:</b> which is one of the earliest datasets used in the literature on classification methods and widely used in statistics and machine learning.</td>
+								<td><b>Iris Data Set:</b> which is one of the earliest datasets used in the literature on classification methods and widely used in statistics and machine learning.</td>
+								<td>We just played against our model until we have filled in the entire Q-Table.</td>
+							</tr>
+						</tbody>
+					</table>
+				</ul>
+				<h3>Python Scripting</h3>
+				<ul>
+					<li>This project consists of a large compilation of python scripts that are organized according to the difficulty they can represent, they can be used in a didactic way to learn how to replicate the most typical python scripts ranging from a tip calculator to a small web server or a chess game against an AI. You can find this project (of greater magnitude) on my <a href="https://github.com/gragi-1/Python_Scripting/tree/main" target="_blank">Github Profile</a></li>
+				</ul>
+			</ul>
         </div>
     </section>
 
@@ -75,7 +141,7 @@
 					</ul>
 				</li>
 				<li>
-					<h3>Google Cretificates</h3>
+					<h3>Google Cretificates (Pdf with certificate included)</h3>
 					<ul>
 						<li><a href="assets/Digitaliza_paso_a_paso_tu_negocio_con_herramientas_de_Google.pdf" target="_blank">Digitaliza tu negocio paso a paso con herramientas de Google</a></li>
 						<li><a href="assets/Introduccion_al_Desarrollo_Web_I.pdf" target="_blank">Introducción al Desarrollo Web I</a></li>
@@ -96,5 +162,6 @@
 
     <!-- JavaScript -->
     <script src="js/scripts.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.3.3/purify.min.js"></script>
 </body>
 </html>

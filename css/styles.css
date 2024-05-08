@@ -15,10 +15,196 @@ body {
 	color: #383838; /* Gris oscuro */
 }
 
+section h2 {
+    background-color: #383838; /* Gris oscuro */
+    color: #FFFFFF; /* Blanco */
+	padding: 20px;
+	text-align: center;
+}
+
+a.no-decorate {
+	text-decoration: none; /* Elimina el subrayado de los enlaces */
+
+}
+
+.no-decorate:hover {
+    text-decoration: none;
+}
+
+a {
+    text-decoration: underline; /* Agrega un subrayado a los enlaces */
+}
+
+a.no-decorate:hover {
+    text-decoration: none !important;
+    border-bottom: none !important;
+}
+
+
+
 ::-moz-selection {
 	background: #BAFF39; /* Amarillo-verde */
 	color: #383838; /* Gris oscuro */
 }
+
+#home {
+    padding: 60px 0;
+    background-color: #6E6E6E;
+    color: #333;
+    text-align: center;
+	color: #FFFFFF; /* Blanco */
+}
+
+#home h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+#home p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.image-collection {
+    display: flex;
+    justify-content: space-between;
+}
+
+.image-collection img {
+    width: calc(33.33% - 20px);
+    height: auto;
+    margin: 10px;
+    object-fit: cover;
+}
+
+
+.image-collection img:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-out;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table td {
+	text-align: justify;
+}
+
+table td.no-justify {
+    text-align: center; /* or left, right, etc. */
+}
+
+th, td {
+    border: 1px solid #FFFFFF; /* Blanco */
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #383838; /* Gris oscuro */
+    color: #FFFFFF; /* Blanco */
+}
+
+td {
+    background-color: #6E6E6E; /* Gris tenue */
+    color: #FFFFFF; /* Blanco */
+}
+
+/**/
+/* Projects Section */
+#projects {
+    color: #FFFFFF; /* Blanco */
+	
+}
+
+#projects h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#projects h3 {
+    margin-top: 20px;
+    color: #BAFF39; /* Amarillo-verde */
+}
+
+#projects ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#projects ul ul {
+    margin-bottom: 20px;
+}
+
+#projects ul ul li {
+    margin-bottom: 10px;
+	margin-left: 20px; /* Agrega una sangría a los elementos de la lista */
+}
+
+#projects a {
+    color: #FFFFFF; /* Blanco */
+    text-decoration: none;
+}
+
+#projects a:hover {
+    color: #BAFF39; /* Amarillo-verde más claro */
+}
+
+#projects .image-collection {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#projects .image-collection img {
+    width: calc(33.33% - 20px);
+    height: auto;
+    margin: 10px;
+    object-fit: cover;
+    transition: transform 0.3s ease-out;
+	border: 2px solid #FFFFFF; /* Añade un marco blanco a las imágenes */
+    box-sizing: border-box; /* Incluye el tamaño del borde en el ancho total del elemento */
+}
+
+#projects .image-collection img:hover {
+    transform: scale(1.05);
+}
+
+#projects table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+#projects table td {
+    text-align: justify;
+}
+
+#projects table td.no-justify {
+    text-align: center; /* or left, right, etc. */
+}
+
+#projects th, #projects td {
+    border: 1px solid #FFFFFF; /* Blanco */
+    padding: 10px;
+    text-align: center;
+}
+
+#projects th {
+    background-color: #383838; /* Gris oscuro */
+    color: #FFFFFF; /* Blanco */
+}
+
+#projects td {
+    background-color: #6E6E6E; /* Gris tenue */
+    color: #FFFFFF; /* Blanco */
+}
+/**/
 
 .container {
 	width: 90%;
@@ -66,6 +252,11 @@ nav {
 	z-index: 1000;
 	display: flex;
 	justify-content: space-between;
+}
+
+nav ul.menu li a:hover {
+    color: #BAFF39; /* Change this to the color you want */
+    transition: color 0.3s ease;
 }
 
 .logo {
@@ -124,6 +315,11 @@ section {
 	color: #FFFFFF; /* Blanco */
 }
 
+#education ul ul li {
+    margin-bottom: 10px;
+    margin-left: 20px; /* Agrega una sangría a los elementos de la lista */
+}
+
 #header_ed {
 	background-color: #383838; /* Gris oscuro */
 	color: #FFFFFF;
@@ -170,6 +366,8 @@ footer {
 	text-align: center;
 	padding: 20px 0;
 	margin-top: auto;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 
 /* Botón de contacto */
@@ -199,5 +397,3 @@ textarea {
 	background-color: #FFFFFF; /* Blanco */
 	color: #383838; /* Gris oscuro */
 }
-
-/* Estilos adicionales específicos según la estructura del sitio */
