@@ -1,69 +1,37 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Navbar toggle
-    const navbarToggle = document.querySelector('.navbar-toggle');
-    const menu = document.querySelector('.menu');
+// JavaScript
+// Efecto de desplazamiento suave
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+	anchor.addEventListener('click', function (e) {
+		e.preventDefault();
 
-    navbarToggle.addEventListener('click', function() {
-        menu.classList.toggle('show');
-    });
+		document.querySelector(this.getAttribute('href')).scrollIntoView({
+			behavior: 'smooth'
+		});
+	});
+});
 
-    // Smooth scroll
-    const menuLinks = document.querySelectorAll('.menu a');
+// Resaltar enlaces activos
+window.addEventListener('scroll', function () {
+	let fromTop = window.scrollY;
 
-    menuLinks.forEach(function(link) {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
+	document.querySelectorAll('.menu a').forEach(link => {
+		let section = document.querySelector(link.hash);
 
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
+		if (
+			section.offsetTop <= fromTop &&
+			section.offsetTop + section.offsetHeight > fromTop
+		) {
+			link.classList.add('active');
+		} else {
+			link.classList.remove('active');
+		}
+	});
+});
 
-            window.scrollTo({
-                top: targetSection.offsetTop,
-                behavior: 'smooth'
-            });
+window.onload = function() {
+    document.getElementById('lastModified').textContent = document.lastModified;
+}
 
-            // Close the navbar menu on mobile
-            if (menu.classList.contains('show')) {
-                menu.classList.remove('show');
-            }
-        });
-    });
-
-    // Back to top button
-    const backToTopButton = document.querySelector('#back-to-top');
-
-    window.addEventListener('scroll', function() {
-        if (window.pageYOffset > 200) {
-            backToTopButton.classList.add('show');
-        } else {
-            backToTopButton.classList.remove('show');
-        }
-    });
-
-    backToTopButton.addEventListener('click', function() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
-
-    // Form submission
-    const contactForm = document.querySelector('#contact-form');
-
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-
-        // Simulate sending the form data
-        const formData = new FormData(contactForm);
-        const formDataObject = {};
-        formData.forEach((value, key) => {
-            formDataObject[key] = value;
-        });
-
-        // Example: Log form data to console
-        console.log('Form Data:', formDataObject);
-
-        // You can add your own form submission logic here
-        // For example, send the form data to a server using fetch or XMLHttpRequest
-    });
+document.querySelector('.menu-toggle').addEventListener('click', function () {
+    document.querySelector('.menu').classList.toggle('show');
 });

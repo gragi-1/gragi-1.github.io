@@ -1,97 +1,203 @@
 /* Estilos generales */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #6E6E6E; /* Gris tenue */
-    color: #FFFFFF; /* Blanco */
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #6E6E6E; /* Gris tenue */
+	color: #FFFFFF; /* Blanco */
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+::selection {
+	background: #BAFF39; /* Amarillo-verde */
+	color: #383838; /* Gris oscuro */
+}
+
+::-moz-selection {
+	background: #BAFF39; /* Amarillo-verde */
+	color: #383838; /* Gris oscuro */
 }
 
 .container {
-    width: 90%;
-    margin: 0 auto;
-    max-width: 1200px;
+	width: 90%;
+	margin: 0 auto;
+	max-width: 1200px;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 1200px) {
+	.container {
+		width: 85%;
+	}
+}
+
+@media screen and (max-width: 992px) {
+	.container {
+		width: 80%;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.container {
+		width: 100%;
+		padding: 0 15px;
+	}
+
+	nav {
+		flex-direction: column;
+	}
+
+	.menu li {
+		display: block;
+		margin: 10px 0;
+	}
 }
 
 /* Navbar */
 nav {
-    background-color: #383838; /* Gris oscuro */
-    color: #FFFFFF;
-    padding: 10px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	background-color: #383838; /* Gris oscuro */
+	color: #FFFFFF;
+	padding: 10px 0;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+	display: flex;
+	justify-content: space-between;
 }
 
 .logo {
-    margin: 0;
-    font-size: 24px;
-    font-weight: bold;
-    text-transform: uppercase;
+	margin: 0;
+	font-size: 24px;
+	font-weight: bold;
+	text-transform: uppercase;
 }
 
 .menu {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
 }
 
 .menu li {
-    display: inline;
-    margin-right: 20px;
+	margin-right: 20px;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .menu {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
 }
 
 .menu li:last-child {
-    margin-right: 0;
+	margin-right: 0;
 }
 
 .menu a {
-    color: #FFFFFF;
-    text-decoration: none;
-    transition: color 0.3s ease;
+	color: #FFFFFF;
+	text-decoration: none;
+	transition: color 0.3s ease;
 }
 
 .menu a:hover {
-    color: #BAFF39; /* Amarillo-verde */
+	color: #BAFF39; /* Amarillo-verde */
 }
 
 /* Secciones */
 section {
-    padding: 50px 0;
+	padding: 50px 0;
+}
+
+/* Education Section */
+#education {
+	color: #FFFFFF; /* Blanco */
+}
+
+#header_ed {
+	background-color: #383838; /* Gris oscuro */
+	color: #FFFFFF;
+	text-align: center;
+	padding: 20px 0;
+}
+
+#education h2 {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+#education h3 {
+	margin-top: 20px;
+	color: #BAFF39; /* Amarillo-verde */
+}
+
+#education ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+#education ul ul {
+	margin-bottom: 20px;
+}
+
+#education ul ul li {
+	margin-bottom: 10px;
+}
+
+#education a {
+	color: #FFFFFF; /* Amarillo-verde */
+	text-decoration: wavy;
+}
+
+#education a:hover {
+	color: #BAFF39; /* Amarillo-verde más claro */
 }
 
 /* Footer */
 footer {
-    background-color: #383838; /* Gris oscuro */
-    color: #FFFFFF;
-    text-align: center;
-    padding: 20px 0;
+	background-color: #383838; /* Gris oscuro */
+	color: #FFFFFF;
+	text-align: center;
+	padding: 20px 0;
+	margin-top: auto;
 }
 
 /* Botón de contacto */
 button[type="submit"] {
-    background-color: #BAFF39; /* Amarillo-verde */
-    color: #383838; /* Gris oscuro */
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+	background-color: #BAFF39; /* Amarillo-verde */
+	color: #383838; /* Gris oscuro */
+	border: none;
+	padding: 10px 20px;
+	cursor: pointer;
+	border-radius: 5px;
+	transition: background-color 0.3s ease;
 }
 
 button[type="submit"]:hover {
-    background-color: #8DEB00; /* Amarillo-verde más claro */
+	background-color: #8DEB00; /* Amarillo-verde más claro */
 }
 
 /* Formulario de contacto */
 input[type="text"],
 input[type="email"],
 textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 5px 0 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #FFFFFF; /* Blanco */
-    color: #383838; /* Gris oscuro */
+	width: 100%;
+	padding: 10px;
+	margin: 5px 0 20px;
+	border: none;
+	border-radius: 5px;
+	background-color: #FFFFFF; /* Blanco */
+	color: #383838; /* Gris oscuro */
 }
 
 /* Estilos adicionales específicos según la estructura del sitio */
