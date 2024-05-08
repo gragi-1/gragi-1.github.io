@@ -3,8 +3,8 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
-    color: #333;
+    background-color: #6E6E6E; /* Gris tenue */
+    color: #FFFFFF; /* Blanco */
 }
 
 .container {
@@ -15,8 +15,8 @@ body {
 
 /* Navbar */
 nav {
-    background-color: #333;
-    color: white;
+    background-color: #383838; /* Gris oscuro */
+    color: #FFFFFF;
     padding: 10px 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -44,13 +44,13 @@ nav {
 }
 
 .menu a {
-    color: white;
+    color: #FFFFFF;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .menu a:hover {
-    color: #ff6f61;
+    color: #BAFF39; /* Amarillo-verde */
 }
 
 /* Secciones */
@@ -60,11 +60,38 @@ section {
 
 /* Footer */
 footer {
-    background-color: #333;
-    color: white;
+    background-color: #383838; /* Gris oscuro */
+    color: #FFFFFF;
     text-align: center;
     padding: 20px 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
 }
+
+/* Botón de contacto */
+button[type="submit"] {
+    background-color: #BAFF39; /* Amarillo-verde */
+    color: #383838; /* Gris oscuro */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #8DEB00; /* Amarillo-verde más claro */
+}
+
+/* Formulario de contacto */
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #FFFFFF; /* Blanco */
+    color: #383838; /* Gris oscuro */
+}
+
+/* Estilos adicionales específicos según la estructura del sitio */

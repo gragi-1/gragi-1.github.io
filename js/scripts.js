@@ -1,31 +1,69 @@
-window.onload = function() {
-	document.getElementById('lastUpdated').textContent = new Date().toLocaleString();
-	document.body.style.opacity = 0;
-	window.setTimeout(function() {
-		document.body.style.opacity = 1;
-	}, 500);
-}
-
 document.addEventListener('DOMContentLoaded', function() {
-	// Selecciona todos los enlaces que comiencen con '#'
-	document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-		anchor.addEventListener('click', function(e) {
-			e.preventDefault(); // Previene el comportamiento predeterminado
+    // Navbar toggle
+    const navbarToggle = document.querySelector('.navbar-toggle');
+    const menu = document.querySelector('.menu');
 
-			// Obtiene el elemento al que apunta el enlace
-			var target = document.querySelector(this.getAttribute('href'));
-			if (target) {
-				// Calcula la posición deseada ajustando la altura de la navbar
-				var navbarHeight = document.querySelector('.navbar').offsetHeight;
-				var offsetPosition = target.offsetTop - navbarHeight - 10; // 10px adicionales para un poco de espacio
+    navbarToggle.addEventListener('click', function() {
+        menu.classList.toggle('show');
+    });
 
-				// Anima el desplazamiento hasta el elemento, ajustado por la altura de la navbar
-				window.scrollTo({
-					top: offsetPosition,
-					behavior: 'smooth'
-				});
-			}
-		});
-	});
+    // Smooth scroll
+    const menuLinks = document.querySelectorAll('.menu a');
+
+    menuLinks.forEach(function(link) {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            const targetId = this.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+
+            window.scrollTo({
+                top: targetSection.offsetTop,
+                behavior: 'smooth'
+            });
+
+            // Close the navbar menu on mobile
+            if (menu.classList.contains('show')) {
+                menu.classList.remove('show');
+            }
+        });
+    });
+
+    // Back to top button
+    const backToTopButton = document.querySelector('#back-to-top');
+
+    window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 200) {
+            backToTopButton.classList.add('show');
+        } else {
+            backToTopButton.classList.remove('show');
+        }
+    });
+
+    backToTopButton.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    // Form submission
+    const contactForm = document.querySelector('#contact-form');
+
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        // Simulate sending the form data
+        const formData = new FormData(contactForm);
+        const formDataObject = {};
+        formData.forEach((value, key) => {
+            formDataObject[key] = value;
+        });
+
+        // Example: Log form data to console
+        console.log('Form Data:', formDataObject);
+
+        // You can add your own form submission logic here
+        // For example, send the form data to a server using fetch or XMLHttpRequest
+    });
 });
-
