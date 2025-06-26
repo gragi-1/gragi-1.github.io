@@ -17,6 +17,8 @@ document.addEventListener('DOMContentLoaded', function() {
     cards.forEach(card => {
       const clone = card.cloneNode(true);
       clone.classList.add('carousel-clone');
+      // Asegurar que los clones no interfieren con scroll reveal
+      clone.classList.remove('stagger-item', 'fade-in', 'fade-in-left', 'fade-in-right', 'fade-in-scale');
       track.appendChild(clone);
     });
   }
@@ -33,31 +35,42 @@ document.addEventListener('DOMContentLoaded', function() {
   function startContinuousAnimation() {
     const originalWidth = calculateOriginalWidth();
     
-    // Crear la animación CSS dinámicamente
+    // Actualizar la animación CSS con el ancho calculado
     const style = document.createElement('style');
+    style.id = 'carousel-dynamic-width';
     style.textContent = `
       @keyframes continuousScroll {
         0% { transform: translateX(0); }
         100% { transform: translateX(-${originalWidth}px); }
       }
       
-      .carousel-track {
-        animation: continuousScroll 15s linear infinite;
+      .carousel-track.animated {
+        animation: continuousScroll 20s linear infinite;
       }
       
-      .carousel-track:hover {
+      .carousel-track.animated:hover {
         animation-play-state: paused;
       }
     `;
+    
+    // Remover estilo previo si existe
+    const existingStyle = document.getElementById('carousel-dynamic-width');
+    if (existingStyle) {
+      existingStyle.remove();
+    }
+    
     document.head.appendChild(style);
     
-    console.log('Animación continua iniciada');
+    // Activar la animación
+    track.classList.add('animated');
+    
+    console.log('Animación continua iniciada con ancho:', originalWidth);
   }
   
   // Esperar un momento para que todo se renderice
   setTimeout(() => {
     startContinuousAnimation();
-  }, 100);
+  }, 300);
   
   console.log('Carrusel continuo configurado correctamente');
-}); 
+});

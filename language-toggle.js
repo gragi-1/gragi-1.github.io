@@ -51,6 +51,11 @@ class LanguageToggle {
     
     // Actualizar aria-labels y otros atributos
     this.updateAttributes(language);
+    
+    // Actualizar modales si están abiertos
+    if (window.updateModalLanguage) {
+      window.updateModalLanguage();
+    }
   }
 
   applyJsonTranslations(language) {
