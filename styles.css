@@ -39,6 +39,13 @@ body {
   transition: background var(--transition), color var(--transition);
 }
 
+/* OCULTAR CURSOR REAL EN TODOS LOS ELEMENTOS */
+*, *:before, *:after {
+  cursor: none !important;
+}
+
+
+
 .container {
   max-width: 800px;
   margin: 0 auto;
@@ -79,7 +86,6 @@ body {
   width: 2.5rem;
   height: 2.5rem;
   font-size: 1.3rem;
-  cursor: pointer;
   transition: background var(--transition), color var(--transition);
   display: flex;
   align-items: center;
@@ -113,7 +119,7 @@ body {
 
 .about-header h2 {
   color: var(--color-primary);
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   margin-bottom: 1rem;
   font-weight: 700;
 }
@@ -195,6 +201,19 @@ body {
 .technical-skills .card-icon { color: var(--color-accent); }
 .personal-values .card-icon { color: #8B5CF6; }
 
+/* Efectos reactivos consistentes para todos los títulos de secciones (excepto el nombre principal) */
+.about-header h2, .projects h2, .education h2, .contact-header h2 {
+  transition: all 0.3s ease;
+}
+
+.about-header h2:hover, .projects h2:hover, .education h2:hover, .contact-header h2:hover {
+  color: var(--color-secondary);
+  transform: translateY(-3px);
+  text-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+/* El nombre principal (.title) no tiene efectos hover */
+
 .intro h2, .projects h2 {
   color: var(--color-primary);
   margin-top: 0;
@@ -202,13 +221,7 @@ body {
   transition: all 0.3s ease; /* Transición suave para efectos reactivos */
 }
 
-/* Efecto reactivo sutil para el título de proyectos */
-.projects h2:hover {
-  color: var(--color-secondary); /* Cambio sutil de color */
-  transform: translateX(8px); /* Movimiento mínimo hacia la derecha */
-  text-shadow: 0 2px 8px rgba(37, 99, 235, 0.2); /* Sombra muy sutil */
-}
-
+/* Efecto reactivo sutil para el título de proyectos - ya incluido en la regla general */
 .projects .project-list {
   display: grid;
   grid-template-columns: 1fr;
@@ -292,7 +305,6 @@ a:hover {
   width: 370px; /* Tamaño fijo para todas las tarjetas */
   height: 480px; /* Altura fija para todas las tarjetas */
   flex: 0 0 auto;
-  cursor: pointer;
   opacity: 0.75; /* Más transparente: de 0.85 a 0.75 */
   background: rgba(31,41,55,0.2); /* Más transparente: de 0.3 a 0.2 */
   backdrop-filter: blur(10px); /* Efecto de desenfoque de fondo */
@@ -431,7 +443,6 @@ a:hover {
   height: 3rem;
   font-size: 2rem; /* Un poco más grande */
   color: var(--color-text);
-  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -475,13 +486,6 @@ a:hover {
   margin-bottom: 2.5rem;
   text-align: center;
   font-size: 2.2rem;
-  transition: all 0.3s ease;
-}
-
-.education h2:hover {
-  color: var(--color-secondary);
-  transform: translateY(-3px);
-  text-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
 }
 
 .education-grid {
@@ -746,7 +750,6 @@ a:hover {
   padding: 0.5rem 1rem;
   border-radius: 2rem;
   transition: all 0.3s ease;
-  cursor: default;
   box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
 }
 
@@ -859,7 +862,6 @@ a:hover {
 
 /* Estilos para cursos clickeables */
 .clickable-course {
-  cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
   padding: 1rem;
@@ -975,7 +977,6 @@ a:hover {
   padding: 0.4rem 0.8rem;
   border-radius: 1.5rem;
   transition: all 0.3s ease;
-  cursor: default;
   border: 1px solid transparent;
   position: relative;
   overflow: hidden;
@@ -1257,7 +1258,6 @@ a:hover {
   transition: all 0.3s ease;
   box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
   border: none;
-  cursor: pointer;
   margin-top: 1.5rem;
 }
 
@@ -1317,7 +1317,7 @@ a:hover {
 
 .contact-header h2 {
   color: var(--color-primary);
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   margin-bottom: 1rem;
   font-weight: 700;
 }
@@ -1455,7 +1455,7 @@ a:hover {
   }
   
   .contact-header h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
   
   .contact-subtitle {
@@ -1487,7 +1487,7 @@ a:hover {
 /* Responsive para la sección "Sobre mí" */
 @media (max-width: 768px) {
   .about-header h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
   
   .intro-text {
